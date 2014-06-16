@@ -50,21 +50,27 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-		
-          <activity
+
+        <activity
+            android:name="com.flyn.location.ui.MainActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.flyn.location.ui.BaiduMapActivity"
             android:screenOrientation="portrait" />
-          <activity
+        <activity
             android:name="com.flyn.location.ui.GoogleMapActivity"
             android:screenOrientation="portrait" />
-          <activity
+        <activity
             android:name="com.flyn.location.ui.LocationMapActivity"
             android:screenOrientation="portrait" >
-                <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter> 
-          </activity>
+        </activity>
+
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
