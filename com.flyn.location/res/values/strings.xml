@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">com.flyn.location</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="loadmap_failure">哎呀，地图加载失败喽,请检查网络设置!</string>
+    <string name="notice_send_str">发送</string>
+    <string name="location">位置</string>
+
+</resources>
