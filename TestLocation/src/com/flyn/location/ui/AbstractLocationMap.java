@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.flyn.location.R;
+import com.flyn.location.service.CoordinateConvertUtil;
 import com.flyn.location.service.GpsInfo;
 import com.flyn.location.service.L;
 import com.flyn.location.service.MyLocationManager;
@@ -179,7 +180,13 @@ public abstract class AbstractLocationMap extends MapActivity
     public static Intent createIntent(Context context, GpsInfo gpsInfo, boolean getLocation)
     {
         Intent intent = new Intent();
-        intent.setClass(context, LocationMapActivity.class);
+        if (CoordinateConvertUtil.isZh())
+        {
+            intent.setClass(context, BaiduMapActivity.class);
+        } else
+        {
+            intent.setClass(context, GoogleMapActivity.class);
+        }
         if (null != gpsInfo)
         {
             intent.putExtra(GPSINFO, gpsInfo);

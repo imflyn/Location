@@ -18,7 +18,7 @@ public class MainActivity extends Activity
         
         public void onClick1(View view)
         {
-            Intent intent=AbstractLocationMapActivity.createIntent(this, null,true);
+            Intent intent=AbstractLocationMap.createIntent(this, null,true);
             startActivity(intent);
         }
 }
