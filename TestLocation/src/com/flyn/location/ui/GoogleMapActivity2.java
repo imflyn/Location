@@ -2,20 +2,22 @@ package com.flyn.location.ui;
 
 import java.util.List;
 
-import android.content.pm.ActivityInfo;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.ViewGroup.LayoutParams;
 
+import com.flyn.location.R;
+import com.flyn.location.service.GpsInfo;
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
 
-public class GoogleMapActivity extends AbstractLocationMap
+public class GoogleMapActivity2 extends AbstractLocationMap
 {
     private MapView           mMapView;
     private MapController     mMapController;
@@ -35,7 +37,7 @@ public class GoogleMapActivity extends AbstractLocationMap
         String key = "";
         try
         {
-            ActivityInfo info = getPackageManager().getActivityInfo(getComponentName(), PackageManager.GET_META_DATA);
+            ApplicationInfo info = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
             key = info.metaData.getString("com.google.android.maps.v2.API_KEY");
         } catch (NameNotFoundException e)
         {
@@ -58,6 +60,7 @@ public class GoogleMapActivity extends AbstractLocationMap
 
     }
 
+    @Override
     protected void follow()
     {
         if (null != mMapController && null != locPoint)
@@ -89,6 +92,7 @@ public class GoogleMapActivity extends AbstractLocationMap
         mMapView.invalidate();
     }
 
+    @Override
     protected void createPaopao()
     {
         if (null != viewCache)
@@ -97,8 +101,8 @@ public class GoogleMapActivity extends AbstractLocationMap
         }
         super.createPaopao();
 
-        MapView.LayoutParams params = new MapView.LayoutParams(MapView.LayoutParams.WRAP_CONTENT, MapView.LayoutParams.WRAP_CONTENT,
-                locPoint, MapView.LayoutParams.BOTTOM_CENTER);
+        MapView.LayoutParams params = new MapView.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, locPoint,
+                MapView.LayoutParams.BOTTOM_CENTER);
         if (null != mMapView)
         {
             mMapView.removeView(mMapView);

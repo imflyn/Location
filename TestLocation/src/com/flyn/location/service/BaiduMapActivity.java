@@ -16,6 +16,7 @@ import com.baidu.mapapi.map.MyLocationOverlay;
 import com.baidu.mapapi.map.PopupClickListener;
 import com.baidu.mapapi.map.PopupOverlay;
 import com.baidu.platform.comapi.basestruct.GeoPoint;
+import com.flyn.location.ui.MyLocationMapView;
 
 /**
  * 用来展示地理位置地图
@@ -49,6 +50,7 @@ public class BaiduMapActivity extends AbstractLocationMap
         super.onCreate(savedInstanceState);
     }
 
+    @Override
     protected void initMap()
     {
         // 地图初始化
@@ -140,6 +142,7 @@ public class BaiduMapActivity extends AbstractLocationMap
     /**
      * 创建弹出泡泡图层
      */
+    @Override
     protected void createPaopao()
     {
         super.createPaopao();
@@ -243,6 +246,7 @@ public class BaiduMapActivity extends AbstractLocationMap
         mMapView.onRestoreInstanceState(savedInstanceState);
     }
 
+    @Override
     public void follow()
     {
         if (this.locData != null && null != mMapController)

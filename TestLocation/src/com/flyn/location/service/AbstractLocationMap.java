@@ -134,7 +134,7 @@ public abstract class AbstractLocationMap extends MapActivity
         super.onResume();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
-    
+
     @Override
     protected void onDestroy()
     {
@@ -207,7 +207,7 @@ public abstract class AbstractLocationMap extends MapActivity
     public void goBack(View view)
     {
         finish();
-      
+
     }
 
 }

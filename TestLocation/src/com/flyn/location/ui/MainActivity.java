@@ -9,16 +9,16 @@ import com.flyn.location.R;
 
 public class MainActivity extends Activity
 {
-        @Override
-        protected void onCreate(Bundle savedInstanceState)
-        {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-        }
-        
-        public void onClick1(View view)
-        {
-            Intent intent=AbstractLocationMap.createIntent(this, null,true);
-            startActivity(intent);
-        }
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void onClick1(View view)
+    {
+        Intent intent = AbstractLocationMap.createIntent(this, null, true);
+        startActivity(intent);
+    }
 }

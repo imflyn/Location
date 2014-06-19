@@ -6,9 +6,9 @@ import android.os.Parcelable;
 public class GpsInfo implements Parcelable
 {
 
-    private String latitude;  // 纬度
+    private String latitude; // 纬度
     private String longitude; // 经度
-    private String address;   // 地址
+    private String address;  // 地址
 
     /**
      * 获取纬度

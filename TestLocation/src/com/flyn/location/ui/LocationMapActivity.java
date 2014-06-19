@@ -195,6 +195,7 @@ public class LocationMapActivity extends AbstractLocationMapActivity
         }
     }
 
+    @Override
     protected void createPop()
     {
         if (null != viewCache)
@@ -226,8 +227,8 @@ public class LocationMapActivity extends AbstractLocationMapActivity
 
     private void createGooglePop()
     {
-        MapView.LayoutParams params = new MapView.LayoutParams(MapView.LayoutParams.WRAP_CONTENT, MapView.LayoutParams.WRAP_CONTENT,
-                googlePoint, MapView.LayoutParams.BOTTOM_CENTER);
+        MapView.LayoutParams params = new MapView.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, googlePoint,
+                MapView.LayoutParams.BOTTOM_CENTER);
         if (null != googleMapView)
         {
             googleMapView.removeView(viewCache);

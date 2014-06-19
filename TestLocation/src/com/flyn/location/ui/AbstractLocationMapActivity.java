@@ -162,7 +162,7 @@ public abstract class AbstractLocationMapActivity extends MapActivity
             findViewById(R.id.btn_follow).bringToFront();
             synchronized (AbstractLocationMap.class)
             {
-                isInited=true;
+                isInited = true;
             }
         }
     }

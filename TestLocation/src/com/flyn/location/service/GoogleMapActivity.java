@@ -35,7 +35,7 @@ public class GoogleMapActivity extends AbstractLocationMap
         String key = "";
         try
         {
-            ApplicationInfo info = getPackageManager().getApplicationInfo(getPackageName(),  PackageManager.GET_META_DATA);
+            ApplicationInfo info = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
             key = info.metaData.getString("com.google.android.maps.v2.API_KEY");
         } catch (NameNotFoundException e)
         {
@@ -58,6 +58,7 @@ public class GoogleMapActivity extends AbstractLocationMap
 
     }
 
+    @Override
     protected void follow()
     {
         if (null != mMapController && null != locPoint)
@@ -65,7 +66,7 @@ public class GoogleMapActivity extends AbstractLocationMap
             mMapController.animateTo(locPoint);
             mMapView.invalidate();
         }
-    } 
+    }
 
     @SuppressWarnings("unchecked")
     @Override
@@ -85,6 +86,7 @@ public class GoogleMapActivity extends AbstractLocationMap
         mMapView.invalidate();
     }
 
+    @Override
     protected void createPaopao()
     {
         if (null != viewCache)
@@ -93,8 +95,8 @@ public class GoogleMapActivity extends AbstractLocationMap
         }
         super.createPaopao();
 
-        MapView.LayoutParams params = new MapView.LayoutParams(MapView.LayoutParams.WRAP_CONTENT, MapView.LayoutParams.WRAP_CONTENT,
-                locPoint, MapView.LayoutParams.BOTTOM_CENTER);
+        MapView.LayoutParams params = new MapView.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, locPoint,
+                MapView.LayoutParams.BOTTOM_CENTER);
         if (null != mMapView)
         {
             mMapView.removeView(mMapView);
@@ -103,15 +105,14 @@ public class GoogleMapActivity extends AbstractLocationMap
         {
             popupText.setText(gpsInfo.getAddress());
             mMapView.addView(viewCache, params);
-        }
-        else
+        } else
         {
-            if(null!=viewCache)
+            if (null != viewCache)
             {
                 mMapView.removeView(viewCache);
             }
         }
-       
+
     }
 
 }
